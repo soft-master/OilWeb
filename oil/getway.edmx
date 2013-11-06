@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="gatewayModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="gatewayModelStoreContainer">
+          <EntitySet Name="BaseInfo" EntityType="gatewayModel.Store.BaseInfo" store:Type="Tables" store:Schema="dbo" store:Name="BaseInfo">
+            <DefiningQuery>SELECT 
+      [BaseInfo].[id] AS [id], 
+      [BaseInfo].[Chang] AS [Chang], 
+      [BaseInfo].[Zhan] AS [Zhan], 
+      [BaseInfo].[GuoLu] AS [GuoLu], 
+      [BaseInfo].[SheBei] AS [SheBei], 
+      [BaseInfo].[Max] AS [Max]
+      FROM [dbo].[BaseInfo] AS [BaseInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Data1" EntityType="gatewayModel.Store.Data1" store:Type="Tables" store:Schema="dbo" store:Name="Data1">
+            <DefiningQuery>SELECT 
+      [Data1].[id] AS [id], 
+      [Data1].[SheBei] AS [SheBei], 
+      [Data1].[Chang] AS [Chang], 
+      [Data1].[Zhan] AS [Zhan], 
+      [Data1].[GuoLu] AS [GuoLu], 
+      [Data1].[ZQWD01] AS [ZQWD01], 
+      [Data1].[ZQGD17] AS [ZQGD17], 
+      [Data1].[YQHY20] AS [YQHY20], 
+      [Data1].[ZQYL02] AS [ZQYL02], 
+      [Data1].[RYLL16] AS [RYLL16], 
+      [Data1].[GSLL10] AS [GSLL10], 
+      [Data1].[FSWD09] AS [FSWD09], 
+      [Data1].[DRWD08] AS [DRWD08], 
+      [Data1].[DCWD07] AS [DCWD07], 
+      [Data1].[RYYL] AS [RYYL], 
+      [Data1].[GBWD05] AS [GBWD05], 
+      [Data1].[WKWD04] AS [WKWD04], 
+      [Data1].[PYWD03] AS [PYWD03], 
+      [Data1].[GFPL14] AS [GFPL14], 
+      [Data1].[RQLJ] AS [RQLJ], 
+      [Data1].[RYLJ] AS [RYLJ], 
+      [Data1].[SLLJQ] AS [SLLJQ], 
+      [Data1].[SLLJY] AS [SLLJY], 
+      [Data1].[YDLJ] AS [YDLJ], 
+      [Data1].[RQDH] AS [RQDH], 
+      [Data1].[RYDH] AS [RYDH], 
+      [Data1].[YDDH] AS [YDDH], 
+      [Data1].[Nian] AS [Nian], 
+      [Data1].[Yue] AS [Yue], 
+      [Data1].[Ri] AS [Ri], 
+      [Data1].[ShiJian] AS [ShiJian]
+      FROM [dbo].[Data1] AS [Data1]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“gateway.dbo.BaseInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="BaseInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Chang" Type="varchar" MaxLength="30" />
+          <Property Name="Zhan" Type="varchar" MaxLength="30" />
+          <Property Name="GuoLu" Type="varchar" MaxLength="30" />
+          <Property Name="SheBei" Type="varchar" MaxLength="20" />
+          <Property Name="Max" Type="int" />
+        </EntityType>
+        <!--生成过程中发现错误:
+      警告 6002: 表/视图“gateway.dbo.Data1”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
+      -->
+        <EntityType Name="Data1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SheBei" Type="varchar" MaxLength="20" />
+          <Property Name="Chang" Type="char" MaxLength="20" />
+          <Property Name="Zhan" Type="varchar" MaxLength="30" />
+          <Property Name="GuoLu" Type="varchar" MaxLength="30" />
+          <Property Name="ZQWD01" Type="decimal" Scale="2" />
+          <Property Name="ZQGD17" Type="decimal" Scale="2" />
+          <Property Name="YQHY20" Type="decimal" Scale="2" />
+          <Property Name="ZQYL02" Type="decimal" Scale="2" />
+          <Property Name="RYLL16" Type="decimal" Scale="2" />
+          <Property Name="GSLL10" Type="decimal" Scale="2" />
+          <Property Name="FSWD09" Type="decimal" Scale="2" />
+          <Property Name="DRWD08" Type="decimal" Scale="2" />
+          <Property Name="DCWD07" Type="decimal" Scale="2" />
+          <Property Name="RYYL" Type="decimal" Scale="2" />
+          <Property Name="GBWD05" Type="decimal" Scale="2" />
+          <Property Name="WKWD04" Type="decimal" Scale="2" />
+          <Property Name="PYWD03" Type="decimal" Scale="2" />
+          <Property Name="GFPL14" Type="decimal" Scale="2" />
+          <Property Name="RQLJ" Type="decimal" Scale="2" />
+          <Property Name="RYLJ" Type="decimal" Scale="2" />
+          <Property Name="SLLJQ" Type="decimal" Scale="2" />
+          <Property Name="SLLJY" Type="decimal" Scale="2" />
+          <Property Name="YDLJ" Type="decimal" Scale="2" />
+          <Property Name="RQDH" Type="decimal" Scale="2" />
+          <Property Name="RYDH" Type="decimal" Scale="2" />
+          <Property Name="YDDH" Type="decimal" Scale="2" />
+          <Property Name="Nian" Type="varchar" MaxLength="10" />
+          <Property Name="Yue" Type="varchar" MaxLength="20" />
+          <Property Name="Ri" Type="varchar" MaxLength="20" />
+          <Property Name="ShiJian" Type="smalldatetime" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="gatewayModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="gatewayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BaseInfo" EntityType="gatewayModel.BaseInfo" />
+          <EntitySet Name="Data1" EntityType="gatewayModel.Data1" />
+        </EntityContainer>
+        <EntityType Name="BaseInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Chang" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Zhan" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="GuoLu" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="SheBei" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Max" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Data1">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SheBei" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Chang" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+          <Property Name="Zhan" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="GuoLu" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ZQWD01" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ZQGD17" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="YQHY20" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ZQYL02" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RYLL16" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GSLL10" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="FSWD09" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DRWD08" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DCWD07" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RYYL" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GBWD05" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="WKWD04" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PYWD03" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GFPL14" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RQLJ" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RYLJ" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SLLJQ" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SLLJY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="YDLJ" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RQDH" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="RYDH" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="YDDH" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Nian" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Yue" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Ri" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="ShiJian" Type="DateTime" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="gatewayModelStoreContainer" CdmEntityContainer="gatewayEntities">
+          <EntitySetMapping Name="BaseInfo"><EntityTypeMapping TypeName="gatewayModel.BaseInfo"><MappingFragment StoreEntitySet="BaseInfo">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="Chang" ColumnName="Chang" />
+            <ScalarProperty Name="Zhan" ColumnName="Zhan" />
+            <ScalarProperty Name="GuoLu" ColumnName="GuoLu" />
+            <ScalarProperty Name="SheBei" ColumnName="SheBei" />
+            <ScalarProperty Name="Max" ColumnName="Max" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Data1"><EntityTypeMapping TypeName="gatewayModel.Data1"><MappingFragment StoreEntitySet="Data1">
+            <ScalarProperty Name="id" ColumnName="id" />
+            <ScalarProperty Name="SheBei" ColumnName="SheBei" />
+            <ScalarProperty Name="Chang" ColumnName="Chang" />
+            <ScalarProperty Name="Zhan" ColumnName="Zhan" />
+            <ScalarProperty Name="GuoLu" ColumnName="GuoLu" />
+            <ScalarProperty Name="ZQWD01" ColumnName="ZQWD01" />
+            <ScalarProperty Name="ZQGD17" ColumnName="ZQGD17" />
+            <ScalarProperty Name="YQHY20" ColumnName="YQHY20" />
+            <ScalarProperty Name="ZQYL02" ColumnName="ZQYL02" />
+            <ScalarProperty Name="RYLL16" ColumnName="RYLL16" />
+            <ScalarProperty Name="GSLL10" ColumnName="GSLL10" />
+            <ScalarProperty Name="FSWD09" ColumnName="FSWD09" />
+            <ScalarProperty Name="DRWD08" ColumnName="DRWD08" />
+            <ScalarProperty Name="DCWD07" ColumnName="DCWD07" />
+            <ScalarProperty Name="RYYL" ColumnName="RYYL" />
+            <ScalarProperty Name="GBWD05" ColumnName="GBWD05" />
+            <ScalarProperty Name="WKWD04" ColumnName="WKWD04" />
+            <ScalarProperty Name="PYWD03" ColumnName="PYWD03" />
+            <ScalarProperty Name="GFPL14" ColumnName="GFPL14" />
+            <ScalarProperty Name="RQLJ" ColumnName="RQLJ" />
+            <ScalarProperty Name="RYLJ" ColumnName="RYLJ" />
+            <ScalarProperty Name="SLLJQ" ColumnName="SLLJQ" />
+            <ScalarProperty Name="SLLJY" ColumnName="SLLJY" />
+            <ScalarProperty Name="YDLJ" ColumnName="YDLJ" />
+            <ScalarProperty Name="RQDH" ColumnName="RQDH" />
+            <ScalarProperty Name="RYDH" ColumnName="RYDH" />
+            <ScalarProperty Name="YDDH" ColumnName="YDDH" />
+            <ScalarProperty Name="Nian" ColumnName="Nian" />
+            <ScalarProperty Name="Yue" ColumnName="Yue" />
+            <ScalarProperty Name="Ri" ColumnName="Ri" />
+            <ScalarProperty Name="ShiJian" ColumnName="ShiJian" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="getway">
+        <EntityTypeShape EntityType="gatewayModel.BaseInfo" Width="1.5" PointX="0.75" PointY="0.75" Height="2.16105224609375" IsExpanded="true" />
+        <EntityTypeShape EntityType="gatewayModel.Data1" Width="1.5" PointX="2.75" PointY="0.75" Height="6.9365445963541656" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>
