@@ -10,7 +10,7 @@
 	.search_top{border:1px solid #f9f9f9; padding:7px 10px;font-weight:bold;background:#f1f1f1}
 	.search_content{padding:10px;border:1px solid #fafafa;padding-left:20px; }
 	
-	.control-label{width:auto !important; margin-left:0px;}
+	.control-label{width:75px !important; margin-left:0px;}
 	.controls{margin-left:10px !important; margin-right:20px;}
 	.form-horizontal{overflow:hidden;margin-bottom:5px;}
 	.form-horizontal .submit{margin-left:10px;}
@@ -18,12 +18,6 @@
 	
     #chart_time{background:#fff; padding:20px; border:1px solid #dcdce0;margin-top:0px; margin-bottom:20px;}
     .detail h3{margin-left:40px;}
-    .line_title{font-size:12px; font-weight:normal;}
-    .line_color_yl{font-size:7px; border-bottom:3px solid #3880aa;width:1000px;}
-    .line_color_wd{font-size:7px; border-bottom:3px solid #4da944;width:1000px;}
-    .line_color_gd{font-size:7px; border-bottom:3px solid #f26522;width:1000px;}
-    .line_color_hyl{font-size:7px; border-bottom:3px solid #c6080d;width:1000px;}
-    .color_father{margin-bottom:15px;}
 </style>
 <div class='search_form'>
     <div class='search_top'>查询</div>
@@ -54,7 +48,7 @@
                     }
                         %>
                 </select>
-            </div> 
+            </div><br /><br /><br />
             <label class="control-label span1">锅炉</label>
             <div class="controls span2">
                 <select name="GuoLu" class='span2 guolu_select'>
@@ -81,7 +75,7 @@
                     
                         %>
                 </select>
-            </div>
+            </div> <br /><br /><br />
             <label class="control-label span1">开始时间</label>
             <div class="controls span2">
                 <input type="text" class='datepicker span2' name='start_time' value="<%=ViewData["start_time"]%>" />
@@ -90,9 +84,9 @@
             <div class="controls span2">
                 <input type="text" class='datepicker span2' name='end_time' value="<%=ViewData["end_time"]%>" />
             </div>
-            <div class='submit'>
-                <input type="submit" value='搜索' class="btn submit btn-primary span4"/>
-                <input type="hidden" name="page" id="page" value='0' />
+            <div class="controls span2"><br /><br />
+            <input type="submit" value='搜索' class="btn submit btn-primary span2"/>
+            <input type="hidden" name="page" id="page" value='0' />
             </div>
         </form>
     </div>
@@ -102,19 +96,6 @@
         <span>&nbsp;&nbsp;<%=ViewData["start_time"]%>到<%=ViewData["end_time"]%></span>
     </h3>
     <figure style="height: 300px; padding-bottom:40px;" id="chart_time">
-        <div class='color_father'>
-            <span class='line_title'>蒸汽压力</span>
-            <span class='line_color_yl'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span>&nbsp;&nbsp;</span>
-            <span class='line_title'>蒸汽温度</span>
-            <span class='line_color_wd'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span>&nbsp;&nbsp;</span>
-            <span class='line_title'>蒸汽干度</span>
-            <span class='line_color_gd'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            <span>&nbsp;&nbsp;</span>
-            <span class='line_title'>烟气含氧量</span>
-            <span class='line_color_hyl'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        </div>
     </figure>
 </div>
 <script>
