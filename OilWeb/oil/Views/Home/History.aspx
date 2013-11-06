@@ -22,7 +22,7 @@
 <div class='search_form'>
     <div class='search_top'>查询</div>
     <div class='search_content'>
-        <form action="/Home/history" method="post" class="form-horizontal" id='search_form'>
+        <form action="<%=Url.Content("~/Home/History") %>" method="post" class="form-horizontal" id='search_form'>
             <label class="control-label span1">厂名</label>
             <div class="controls span2">
                 <select name="Chang" class='span2 chang_select'>
@@ -111,10 +111,10 @@
 
         $('.chang_select').change(function () {
             var Chang = $(this).find("option:selected").val();
-            $.get('/Home/GetZhanList', { Chang: Chang }, function (data) {
+            $.get("<%=Url.Content("~/Home/GetZhanList")%>", { Chang: Chang }, function (data) {
                 $('.zhan_select').empty().append(data);
                 var Zhan = $('.zhan_select').find("option:first").val();
-                $.get('/Home/GetGuoLuList', { Zhan: Zhan }, function (data) {
+                $.get("<%=Url.Content("~/Home/GetGuoLuList")%>", { Zhan: Zhan }, function (data) {
                     $('.guolu_select').empty().append(data);
                 })
             })
@@ -123,7 +123,7 @@
 
         $('.zhan_select').change(function () {
             var Zhan = $(this).find("option:selected").val();
-            $.get('/Home/GetGuoLuList', { Zhan: Zhan }, function (data) {
+            $.get("<%=Url.Content("~/Home/GetGuoLuList")%>", { Zhan: Zhan }, function (data) {
                 $('.guolu_select').empty().append(data);
             })
         });

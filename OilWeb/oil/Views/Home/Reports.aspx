@@ -27,7 +27,7 @@
 <div class='search_form'>
     <div class='search_top'>查询</div>
     <div class='search_content'>
-        <form action="/Home/Reports" method="post" class="form-horizontal" id='search_form'>
+        <form action="<%=Url.Content("~/Home/Reports") %>"" method="post" class="form-horizontal" id='search_form'>
             <label class="control-label span1">厂名</label>
             <div class="controls span2">
                 <select name="Chang" class='span2 chang_select'>
@@ -185,7 +185,7 @@
                     Response.Write("<td>" + item.id + "</td>");
                     Response.Write("<td>" + error_span + "</td>");
                 }
-                var she_bei_link = "<a href='/Home/Detail?code=" + item.SheBei + "'>" + item.SheBei + "</a>";
+                var she_bei_link = "<a href='"+ Url.Content("~/Home")+"/Detail?code=" + item.SheBei + "'>" + item.SheBei + "</a>";
                 Response.Write("<td>" + she_bei_link + "</td>");
                 Response.Write("<td>" + item.Chang + "</td>");
                 Response.Write("<td>" + item.Zhan + "</td>");
@@ -233,11 +233,11 @@
             $('#search_form').submit();
         })
         $('#search').click(function () {
-            $('#search_form').attr('action', '/Home/Reports');
+            $('#search_form').attr('action', "<%=Url.Content("~/Home/Reports")%>");
             $('#search_form').submit();
         });
         $('#outcsv').click(function () {
-            $('#search_form').attr('action', '/Home/OutCsvFile');
+            $('#search_form').attr('action', "<%=Url.Content("~/Home/OutCsvFile")%>");
             $('#search_form').submit();
         });
         var height = document.documentElement.clientHeight - 220;
@@ -248,7 +248,7 @@
 
         $('.chang_select').change(function () {
             var Chang = $(this).find("option:selected").val();
-            $.get('/Home/GetZhanList', { Chang: Chang }, function (data) {
+            $.get("<%=Url.Content("~/Home/GetZhanList")%>", { Chang: Chang }, function (data) {
                 $('.zhan_select').empty().append("<option>全部</option>" + data);
                 $('.guolu_select').empty().append("<option>全部</option>");
             })
@@ -257,7 +257,7 @@
 
         $('.zhan_select').change(function () {
             var Zhan = $(this).find("option:selected").val();
-            $.get('/Home/GetGuoLuList', { Zhan: Zhan }, function (data) {
+            $.get("<%=Url.Content("~/Home/GetGuoLuList")%>", { Zhan: Zhan }, function (data) {
                 $('.guolu_select').empty().append("<option>全部</option>" + data);
             })
         });

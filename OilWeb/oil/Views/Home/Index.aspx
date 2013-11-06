@@ -18,7 +18,7 @@
 <div class="pagination pagination-right" id='page_nav'>
     <div class="pagination-title"><span>共有<font color="#aa0000"><%=ViewData["total_page"] %></font>页,<font color="#aa0000"><%=ViewData["total_count"] %></font>条记录</span></div>
   <ul>
-    <li><a href='/Home/Index?page=<%=Convert.ToInt32(ViewData["page"])-1 %>'>Prev</a></li>
+    <li><a href='<%=Url.Content("~/Home") %>/Index?page=<%=Convert.ToInt32(ViewData["page"])-1 %>'>Prev</a></li>
     <%
         for (int i = Convert.ToInt32(ViewData["page"])-5; i <= Convert.ToInt32(ViewData["last_page"]); i++)
         {
@@ -29,10 +29,10 @@
                 class_str = " class='active'"; 
             }
 
-            Response.Write("<li><a" + class_str + " href='/Home/Index?page=" + i + "'>" + i + "</a></li>");
+            Response.Write("<li><a" + class_str + " href='"+Url.Content("~/Home")+"/Index?page=" + i + "'>" + i + "</a></li>");
         }
          %>
-    <li><a href='/Home/Index?page=<%=Convert.ToInt32(ViewData["page"])+1 %>'>Next</a></li>
+    <li><a href='<%=Url.Content("~/Home") %>/Index?page=<%=Convert.ToInt32(ViewData["page"])+1 %>'>Next</a></li>
   </ul>
 </div>
 <div class='status_data_list bgcfff m10 bw1 bss bcdcdce0'>
@@ -99,7 +99,7 @@
                     Response.Write("<td>" + item.id + "</td>");
                     Response.Write("<td>" + error_span + "</td>");
                 }
-                var she_bei_link = "<a href='/Home/Detail?code=" + item.SheBei + "'>" + item.SheBei + "</a>";
+                var she_bei_link = "<a href='" + Url.Content("~/Home")+ "/Detail?code=" + item.SheBei + "'>" + item.SheBei + "</a>";
                 Response.Write("<td>" + she_bei_link + "</td>");
                 Response.Write("<td>" + item.Chang + "</td>");
                 Response.Write("<td>" + item.Zhan + "</td>");
